@@ -1,4 +1,12 @@
 public class Libro {
+
+   public Libro(String titulo,String autor,int numPag,int valoracion){
+       this.titulo = titulo;
+       this.autor = autor;
+       this.numPag = numPag;
+       this.valoracion = valoracion;
+   }
+
     public String getTitulo() {
         return titulo;
     }
