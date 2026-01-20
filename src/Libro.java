@@ -77,6 +77,11 @@ public class Libro {
     }
 
     @Override
+    public int hashCode() {
+        return Objects.hash(isbn);
+    }
+
+    @Override
     public String toString() {
         return "Libro{" +
                 "titulo='" + titulo + '\'' +
