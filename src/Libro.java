@@ -1,10 +1,13 @@
+import java.util.Objects;
+
 public class Libro {
 
-   public Libro(String titulo,String autor,int numPag,int valoracion){
+   public Libro(String titulo,String autor,int numPag,int valoracion,int isbn){
        this.titulo = titulo;
        this.autor = autor;
        this.numPag = numPag;
        this.valoracion = valoracion;
+       this.isbn = isbn;
    }
 
     public String getTitulo() {
@@ -46,10 +49,42 @@ public class Libro {
     }
 
     private int valoracion;
+
+    public int getIsbn() {
+        return isbn;
+    }
+
+    public void setIsbn(int isbn) {
+        this.isbn = isbn;
+    }
+
+    private int isbn;
+
     public void mostrarinfo(){
         System.out.println(titulo);
         System.out.println(autor);
         System.out.println(numPag);
         System.out.println(valoracion);
+        System.out.println(isbn);
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Libro libro = (Libro) o;
+        return isbn == libro.isbn;
+    }
+
+    @Override
+    public String toString() {
+        return "Libro{" +
+                "titulo='" + titulo + '\'' +
+                ", autor='" + autor + '\'' +
+                ", numPag=" + numPag +
+                ", valoracion=" + valoracion +
+                ", isbn=" + isbn +
+                '}';
+    }
+
 }
